@@ -2,7 +2,6 @@ package backtrack
 
 const val QUEEN_CHAR = 'W'
 const val EMPTY_FIELD = '_'
-const val SEPARATOR = "="
 
 class Board(private val n: Int, private val fields: Array<CharArray> = Array(n) { CharArray(n) { EMPTY_FIELD } }) {
 
