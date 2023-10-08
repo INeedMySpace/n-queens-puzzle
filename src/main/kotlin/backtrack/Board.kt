@@ -11,5 +11,5 @@ class Board(private val n: Int, private val fields: Array<CharArray> = Array(n) 
         fields[row][col] = if (setQueen) QUEEN_CHAR else EMPTY_FIELD
     }
 
-    override fun toString() = fields.joinToString(separator = "\n") { it.joinToString(separator = " ") }
+    override fun toString() = fields.joinToString(separator = System.lineSeparator()) { it.joinToString(separator = " ") }
 }

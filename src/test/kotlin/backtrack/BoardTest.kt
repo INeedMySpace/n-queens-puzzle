@@ -8,7 +8,7 @@ class BoardTest {
     @Test
     fun `Should create and print empty board of size 4`() {
         val b = Board(4)
-        assertThat(b.toString()).isEqualTo("""
+        assertThat(b.toString()).isEqualToIgnoringNewLines("""
             _ _ _ _
             _ _ _ _
             _ _ _ _

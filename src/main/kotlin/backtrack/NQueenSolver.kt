@@ -1,6 +1,7 @@
 package backtrack
 
 import com.xenomachina.argparser.ArgParser
+import com.xenomachina.argparser.InvalidArgumentException
 import com.xenomachina.argparser.default
 import com.xenomachina.argparser.mainBody
 import kotlin.system.measureTimeMillis
@@ -14,10 +15,17 @@ class NQueenSolverParams(parser: ArgParser) {
     val n by parser.storing(
         "-n",
         help = "size of the board"
-    ) { toInt() }.default(8)
+    ) { toInt() }
+        .default(8)
+        .addValidator {
+            if (value !in 1..16) throw InvalidArgumentException("Board size should be in range [1, 16]")
+        }
 }
 
 class NQueenSolver(private val n: Int = 8, private val verbose: Boolean = false) {
+    init {
+        require(n in 1..16) { "Board size should be in range [1, 16]" }
+    }
     private val board = Board(n)
     private val mainDiagonalArray = BooleanArray(2 * n - 1)
     private val offDiagonalArray = BooleanArray(2 * n - 1)
