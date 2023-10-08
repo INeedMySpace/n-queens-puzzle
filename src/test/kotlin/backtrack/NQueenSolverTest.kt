@@ -29,22 +29,4 @@ class NQueenSolverTest {
         println(s)
         assertThat(s.foundSolutions).isEqualTo(expected)
     }
-
-//    @Test
-//    fun `Should solve for 4 queen`() {
-//        val s = NQueenSolver(4).solve()
-//        assertThat(s.foundSolutions).isEqualTo(2)
-//    }
-//
-//    @Test
-//    fun `Should solve for 15 queen`() {
-//        val s = NQueenSolver(15).solve()
-//        assertThat(s.foundSolutions).isEqualTo(2_279_184)
-//    }
-//
-//    @Test
-//    fun `Should solve for 16 queen`() {
-//        val s = NQueenSolver(16).solve()
-//        assertThat(s.foundSolutions).isEqualTo(14_772_512)
-//    }
 }
