@@ -37,7 +37,7 @@ class NQueenSolverTest {
     fun `Should print out solution with verbose`() {
         val content = ByteArrayOutputStream()
         System.setOut(PrintStream(content))
-        val s = NQueenSolver(4, verbose = true).solve()
+        NQueenSolver(4, verbose = true).solve()
         assertThat(content.toString()).isEqualToIgnoringNewLines("""
             Found solution: 1
             _ W _ _
